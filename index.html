@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Siti Nurfatwa</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="container header-flex">
+      <div class="profile-pic">
+        <img src="profile.png" alt="Profile Picture" />
+      </div>
+      <div class="header-text">
+        <h1>Siti Nurfatwa Dullah</h1>
+        <h3>I'm a <span id="typed-text"></span><span class="cursor"></span></h3>
+        <nav>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <button id="toggle-dark-mode">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <section id="about" class="container">
+    <h2>About Me</h2>
+    <p>
+      I am a passionate frontend developer skilled in modern web technologies.
+      I enjoy building clean, efficient, and user-friendly applications that deliver great user experiences.
+    </p>
+  </section>
+
+  <section id="projects" class="container">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Artconnect</h3>
+      <p>
+        A web application for artists to share and sell their artwork.
+        An e-commerce platform inspired by Carousell.
+        <br/>
+        <a href="https://artconnectmalaysia.netlify.app/index.html" target="_blank">Visit Artconnect Malaysia</a>
+      </p>
+    </div>
+    <div class="project">
+      <h3>Ez games</h3>
+      <p>A small website with games that are easy and quick to play
+        <br/>
+        <a href="https://ez-games.netlify.app/" target="_blank">Visit Ez games</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="contact" class="container">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:sitinurfatwa15@gmail.com">sitinurfatwa15@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/bunnymeo" target="_blank">github.com/bunnymeo</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/sitinurfatwa" target="_blank">linkedin.com/in/sitinurfatwa</a></p>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Siti Nurfatwa</p>
+    </div>
+  </footer>
+  <script>
+    function createSparkleAt(x, y) {
+  const sparkle = document.createElement('div');
+  sparkle.classList.add('sparkle');
+  sparkle.innerText = '⋆';
+  sparkle.style.left = x + 'px';
+  sparkle.style.top = y + 'px';
+  sparkle.style.animationDuration = (1 + Math.random() * 1.5) + 's';
+  document.body.appendChild(sparkle);
+
+  sparkle.addEventListener('animationend', () => {
+    sparkle.remove();
+  });
+}
+
+// Spawn sparkle on cursor move
+window.addEventListener('mousemove', function(e) {
+  createSparkleAt(e.clientX, e.clientY);
+});
+const texts = ["Final Year Student", "Frontend Developer"];
+let count = 0;
+let index = 0;
+let currentText = "";
+let isDeleting = false;
+let waitTime = 2000; // wait 2s at the end of each phrase
+
+function type() {
+  if (count >= texts.length) count = 0;
+  currentText = texts[count];
+  
+  let displayed = document.getElementById("typed-text").innerText;
+
+  if (!isDeleting) {
+    // typing
+    document.getElementById("typed-text").innerText = currentText.substring(0, index + 1);
+    index++;
+    if (index === currentText.length) {
+      isDeleting = true;
+      setTimeout(type, waitTime); // pause before deleting
+      return;
+    }
+  } else {
+    // deleting
+    document.getElementById("typed-text").innerText = currentText.substring(0, index - 1);
+    index--;
+    if (index === 0) {
+      isDeleting = false;
+      count++;
+    }
+  }
+
+  let speed = isDeleting ? 100 : 150; // faster delete
+  setTimeout(type, speed);
+}
+
+type();
+
+const toggleBtn = document.getElementById('toggle-dark-mode');
+
+toggleBtn.addEventListener('click', function() {
+  document.body.classList.toggle('dark-mode');
+  document.querySelector('header').classList.toggle('dark-mode');
+    document.querySelector('footer').classList.toggle('dark-mode');
+  // Switch the icon
+  if (document.body.classList.contains('dark-mode')) {
+    toggleBtn.innerText = '☀️';
+  } else {
+    toggleBtn.innerText = '🌙';
+  }
+});
+  </script>
+</body>
+</html>
