@@ -357,3 +357,28 @@ body.dark-mode .skill-bar {
 body.dark-mode .skill-fill {
   background-color: #f5c16c;
 }
+
+body.dark-mode {
+  background-color: #121212;
+  color: #ddd;
+}
+
+body.dark-mode .page-container {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .projects-card {
+  background-color: #2a2a2a;
+}
+
+body.dark-mode .project {
+  background-color: #3a3a3a;
+}
+
+body.dark-mode .skill-bar {
+  background-color: #333;
+}
+
+body.dark-mode .skill-fill {
+  background-color: #f5c16c;
+}
