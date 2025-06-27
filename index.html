@@ -5,137 +5,161 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Siti Nurfatwa</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <header>
-    <div class="container header-flex">
-      <div class="profile-pic">
-        <img src="profile.png" alt="Profile Picture" />
-      </div>
-      <div class="header-text">
-        <h1>Siti Nurfatwa Dullah</h1>
-        <h3>I'm a <span id="typed-text"></span><span class="cursor"></span></h3>
-        <nav>
-          <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-        <button id="toggle-dark-mode">🌙</button>
-      </div>
-    </div>
-  </header>
+  <div class="mode-toggle">
+    <label class="switch">
+      <input type="checkbox" id="toggle-dark">
+      <span class="slider"></span>
+    </label>
+    <span id="mode-label">Light</span>
+  </div>
 
-  <section id="about" class="container">
-    <h2>About Me</h2>
+  <div class="container">
+    <!-- LEFT SIDEBAR CARD -->
+    <aside class="profile-card">
+      <img src="profile.png" alt="Profile Picture" class="profile-img">
+      <h2><span class="highlight">Siti</span> Nurfatwa</h2>
+      <p class="bio">
+        I'm a passionate frontend developer who enjoys building pixel-perfect, user-friendly web apps.
+      </p>
+      <div class="contact-info">
+        <p>📍 Malaysia</p>
+        <p>✉️ sitinurfatwa15@gmail.com</p>
+      </div>
+      <div class="socials">
+        <div class="socials">
+          <a href="https://linkedin.com/in/sitinurfatwa" target="_blank">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://instagram.com/delu.wa" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://github.com/bunnymeo" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- RIGHT MAIN CARD -->
+     <div class="page-container">
+    <main class="hero-card">
+      <div class="hero-image">
+        <div class="image-background">
+          <img src="profile.png" alt="Profile Hero">
+        </div>
+      </div>
+      <div class="hero-text">
+        <h3>Hello! I'm a</h3>
+        <h1><span id="typed-text"></span><span class="cursor">|</span></h1>
+      </div>
+    </main>
+    <section class="projects-card">
+  <h2>Projects</h2>
+  <div class="project">
+    <h3>Artconnect</h3>
     <p>
-      I am a passionate frontend developer skilled in modern web technologies.
-      I enjoy building clean, efficient, and user-friendly applications that deliver great user experiences.
+      A web application for artists to share and sell their artwork.
+      An e-commerce platform inspired by Carousell.
+      <br/>
+      <a href="https://artconnectmalaysia.netlify.app/index.html" target="_blank">Visit Artconnect Malaysia</a>
     </p>
-  </section>
+  </div>
+  <div class="project">
+    <h3>Ez games</h3>
+    <p>
+      A small website with games that are easy and quick to play
+      <br/>
+      <a href="https://ez-games.netlify.app/" target="_blank">Visit Ez games</a>
+    </p>
+  </div>
+</section>
+<section class="projects-card">
+  <h2>Education</h2>
+  <div class="project">
+    <p>University Technology MARA 2022-2025</p>
+    <h3>Computer Science</h3>
+  </div>
+</section>
+<section class="projects-card">
+  <h2>Professionality</h2>
 
-  <section id="projects" class="container">
-    <h2>Projects</h2>
-    <div class="project">
-      <h3>Artconnect</h3>
-      <p>
-        A web application for artists to share and sell their artwork.
-        An e-commerce platform inspired by Carousell.
-        <br/>
-        <a href="https://artconnectmalaysia.netlify.app/index.html" target="_blank">Visit Artconnect Malaysia</a>
-      </p>
+  <div class="skill">
+    <span class="skill-name">HTML</span>
+    <div class="skill-bar">
+      <div class="skill-fill" data-percent="95%"></div>
     </div>
-    <div class="project">
-      <h3>Ez games</h3>
-      <p>A small website with games that are easy and quick to play
-        <br/>
-        <a href="https://ez-games.netlify.app/" target="_blank">Visit Ez games</a>
-      </p>
-    </div>
-  </section>
+  </div>
 
-  <section id="contact" class="container">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:sitinurfatwa15@gmail.com">sitinurfatwa15@gmail.com</a></p>
-    <p>GitHub: <a href="https://github.com/bunnymeo" target="_blank">github.com/bunnymeo</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/sitinurfatwa" target="_blank">linkedin.com/in/sitinurfatwa</a></p>
-  </section>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Siti Nurfatwa</p>
+  <div class="skill">
+    <span class="skill-name">CSS</span>
+    <div class="skill-bar">
+      <div class="skill-fill" data-percent="90%"></div>
     </div>
-  </footer>
+  </div>
+
+  <div class="skill">
+    <span class="skill-name">JavaScript</span>
+    <div class="skill-bar">
+      <div class="skill-fill" data-percent="70%"></div>
+    </div>
+  </div>
+</section>
+</div>
+  </div>
   <script>
-    function createSparkleAt(x, y) {
-  const sparkle = document.createElement('div');
-  sparkle.classList.add('sparkle');
-  sparkle.innerText = '⋆';
-  sparkle.style.left = x + 'px';
-  sparkle.style.top = y + 'px';
-  sparkle.style.animationDuration = (1 + Math.random() * 1.5) + 's';
-  document.body.appendChild(sparkle);
-
-  sparkle.addEventListener('animationend', () => {
-    sparkle.remove();
-  });
-}
-
-// Spawn sparkle on cursor move
-window.addEventListener('mousemove', function(e) {
-  createSparkleAt(e.clientX, e.clientY);
-});
-const texts = ["Final Year Student", "Frontend Developer"];
+    // Typing effect
+const texts = ["Frontend Developer", "UI designer"];
 let count = 0;
 let index = 0;
-let currentText = "";
 let isDeleting = false;
-let waitTime = 2000; // wait 2s at the end of each phrase
+let waitTime = 2000;
 
 function type() {
-  if (count >= texts.length) count = 0;
-  currentText = texts[count];
-  
-  let displayed = document.getElementById("typed-text").innerText;
+  const element = document.getElementById('typed-text');
+  const text = texts[count % texts.length];
 
-  if (!isDeleting) {
-    // typing
-    document.getElementById("typed-text").innerText = currentText.substring(0, index + 1);
-    index++;
-    if (index === currentText.length) {
-      isDeleting = true;
-      setTimeout(type, waitTime); // pause before deleting
-      return;
-    }
-  } else {
-    // deleting
-    document.getElementById("typed-text").innerText = currentText.substring(0, index - 1);
+  if (isDeleting) {
+    element.textContent = text.substring(0, index - 1);
     index--;
-    if (index === 0) {
-      isDeleting = false;
-      count++;
-    }
+  } else {
+    element.textContent = text.substring(0, index + 1);
+    index++;
   }
 
-  let speed = isDeleting ? 100 : 150; // faster delete
-  setTimeout(type, speed);
+  if (!isDeleting && index === text.length) {
+    isDeleting = true;
+    setTimeout(type, waitTime);
+    return;
+  } else if (isDeleting && index === 0) {
+    isDeleting = false;
+    count++;
+  }
+
+  setTimeout(type, isDeleting ? 100 : 150);
 }
 
 type();
 
-const toggleBtn = document.getElementById('toggle-dark-mode');
+// Dark mode toggle
+const toggle = document.getElementById('toggle-dark');
+const label = document.getElementById('mode-label');
 
-toggleBtn.addEventListener('click', function() {
+toggle.addEventListener('change', () => {
   document.body.classList.toggle('dark-mode');
-  document.querySelector('header').classList.toggle('dark-mode');
-    document.querySelector('footer').classList.toggle('dark-mode');
-  // Switch the icon
-  if (document.body.classList.contains('dark-mode')) {
-    toggleBtn.innerText = '☀️';
-  } else {
-    toggleBtn.innerText = '🌙';
-  }
+  label.textContent = document.body.classList.contains('dark-mode') ? 'Dark' : 'Light';
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const fills = document.querySelectorAll('.skill-fill');
+  fills.forEach(fill => {
+    const percent = fill.getAttribute('data-percent');
+    setTimeout(() => {
+      fill.style.width = percent;
+      fill.textContent = percent;
+    }, 500);
+  });
 });
   </script>
 </body>
